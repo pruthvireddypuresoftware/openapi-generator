@@ -58,6 +58,7 @@ addons:
       - g++-5
       - chromium-browser
       - openjdk-8-jdk
+      - maven
   
 arch:
   - arm64
