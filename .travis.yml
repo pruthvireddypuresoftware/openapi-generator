@@ -124,20 +124,18 @@ before_install:
     fi;
   - pushd .; cd website; yarn install; popd
   # install Deno
-  - give me deno installtion steps
-# install Deno
-- if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
-    git clone https://github.com/denoland/deno/;
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y -v;
-    sudo apt install libglib2.0-dev;
-    export PATH=$PATH:$HOME/.cargo/bin;
-    cd deno;
-    cargo build -vv;
-    cd ..;
-  else
-    curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.1.2;
-    export PATH="$HOME/.deno/bin:$PATH";
-  fi
+  - if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
+      git clone https://github.com/denoland/deno/;
+      curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y -v;
+      sudo apt install libglib2.0-dev;
+      export PATH=$PATH:$HOME/.cargo/bin;
+      cd deno;
+      cargo build -vv;
+      cd ..;
+    else
+      curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.1.2;
+      export PATH="$HOME/.deno/bin:$PATH";
+    fi
 
 install:
   # Add Godeps dependencies to GOPATH and PATH
