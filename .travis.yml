@@ -133,6 +133,8 @@ before_install:
       cd deno;
       cargo build -vv;
       cd ..;
+      export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-arm64;
+      export PATH=$JAVA_HOME/bin:$PATH;
     else
       curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.1.2;
       export PATH="$HOME/.deno/bin:$PATH";
