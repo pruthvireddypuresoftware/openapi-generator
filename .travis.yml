@@ -55,11 +55,10 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
+      - chromium-browser
     packages:
       - g++-5
-  chrome: stable
-  hosts:
-    - petstore.swagger.io
+  
 arch:
   - amd64
   - arm64
@@ -73,7 +72,7 @@ before_install:
   - npm install -g typescript
   - npm install -g npm
   - npm config set registry http://registry.npmjs.org/
-  - ls ~/virtualenv
+  - ls /opt/python
   # set python 3.6.3 as default
   - source ~/virtualenv/python3.6/bin/activate
   # to run petstore server locally via docker
