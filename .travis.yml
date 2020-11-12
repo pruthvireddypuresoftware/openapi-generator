@@ -63,6 +63,7 @@ arch:
   - amd64
   - arm64
 before_install:
+  - ls /opt/python
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.0
   - export PATH="$HOME/.yarn/bin:$PATH"
   # install rust
@@ -72,7 +73,6 @@ before_install:
   - npm install -g typescript
   - npm install -g npm
   - npm config set registry http://registry.npmjs.org/
-  - ls /opt/python
   # set python 3.6.3 as default
   - source ~/virtualenv/python3.6/bin/activate
   # to run petstore server locally via docker
