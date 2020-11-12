@@ -60,7 +60,6 @@ addons:
       - openjdk-8-jdk
   
 arch:
-  - amd64
   - arm64
 before_install:
   - which python
@@ -96,7 +95,7 @@ before_install:
   #- sudo apt-get install dart
   # switch to php7
   - phpenv versions
-  - phpenv global 7.2.15
+  - phpenv global 7.2.31
   - php -v
   # comment out below as installation failed in travis
   # Add rebar3 build tool and recent Erlang/OTP for Erlang petstore server tests.
