@@ -126,7 +126,7 @@ before_install:
   # install Deno
   - give me deno installtion steps
 # install Deno
-- if [ "${TRAVIS_CPU_ARCH}" == "arm64" ]; then
+- if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
     git clone https://github.com/denoland/deno/;
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y -v;
     sudo apt install libglib2.0-dev;
