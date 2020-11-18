@@ -96,7 +96,7 @@ before_install:
   #- sudo apt-get install dart
   # switch to php7
   - wget http://launchpadlibrarian.net/416468166/php7.2-zip_7.2.15-0ubuntu0.18.04.2_arm64.deb
-  - dpkg -i php7.2-zip_7.2.15-0ubuntu0.18.04.2_arm64.deb
+  - sudo dpkg -i php7.2-zip_7.2.15-0ubuntu0.18.04.2_arm64.deb
   - phpenv versions
   - phpenv global 7.2.15
   - php -v
