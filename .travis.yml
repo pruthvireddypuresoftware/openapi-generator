@@ -95,8 +95,11 @@ before_install:
   #- sudo apt-get update
   #- sudo apt-get install dart
   # switch to php7
+  - sudo apt update -qq && sudo apt install -y php-common php7.2-common
+  - wget http://launchpadlibrarian.net/416468166/php7.2-zip_7.2.15-0ubuntu0.18.04.2_arm64.deb
+  - dpkg -i php7.2-zip_7.2.15-0ubuntu0.18.04.2_arm64.deb
   - phpenv versions
-  - phpenv global 7.2.31
+  - phpenv global 7.2.15
   - php -v
   # comment out below as installation failed in travis
   # Add rebar3 build tool and recent Erlang/OTP for Erlang petstore server tests.
